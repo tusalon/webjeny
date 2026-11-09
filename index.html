@@ -9,7 +9,7 @@
 <meta property="og:description" content="Resiliencia y compromiso. Uñas con alma en Caibarién.">
 <meta property="og:image" content="img/13-conchas-doradas.webp">
 <meta name="theme-color" content="#16100f">
-<link rel="icon" href="img/logo.png">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
@@ -18,8 +18,33 @@
 </head>
 <body>
 
+<!-- Logo en vectores: nítido a cualquier tamaño y con las mismas tipografías de la página -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="460" y2="200">
+      <stop offset="0" stop-color="#a9844a"/><stop offset=".35" stop-color="#f1dfae"/><stop offset=".6" stop-color="#c9a86a"/><stop offset="1" stop-color="#9c7a40"/>
+    </linearGradient>
+    <symbol id="logo-h" viewBox="0 0 460 200">
+      <text x="230" y="116" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-style="italic" font-weight="500" font-size="124" fill="url(#lg)">Jeny's</text>
+      <path d="M70 152H208M252 152H390" stroke="url(#lg)" stroke-width="1.2"/>
+      <path d="M230 143l9 9-9 9-9-9z" fill="url(#lg)"/>
+      <text x="238" y="190" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="500" font-size="27" letter-spacing="17" fill="url(#lg)">NAILS</text>
+    </symbol>
+    <symbol id="logo-ring" viewBox="0 0 400 400">
+      <circle cx="200" cy="200" r="190" fill="none" stroke="url(#lg)" stroke-width="2"/>
+      <circle cx="200" cy="200" r="180" fill="none" stroke="url(#lg)" stroke-width=".7" opacity=".7"/>
+      <path d="M200 4l10 14-10 14-10-14z" fill="url(#lg)"/>
+      <text x="200" y="212" text-anchor="middle" font-family="Playfair Display,Georgia,serif" font-style="italic" font-weight="500" font-size="100" fill="url(#lg)">Jeny's</text>
+      <path d="M96 244H182M218 244H304" stroke="url(#lg)" stroke-width="1.2"/>
+      <path d="M200 236l8 8-8 8-8-8z" fill="url(#lg)"/>
+      <text x="207" y="292" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="500" font-size="30" letter-spacing="15" fill="url(#lg)">NAILS</text>
+      <text x="203" y="336" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="400" font-size="10.5" letter-spacing="7" fill="#c9a86a" opacity=".8">CAIBARIÉN</text>
+    </symbol>
+  </defs>
+</svg>
+
 <header class="header" id="header">
-  <a href="#inicio" class="brand" aria-label="Jeny's Nails"><img src="img/logo.png" alt="Jeny's Nails"></a>
+  <a href="#inicio" class="brand" aria-label="Jeny's Nails"><b>Jeny's</b><span>NAILS</span></a>
   <nav class="menu" id="menu">
     <a href="#galeria" data-i="n_gal">Galería</a>
     <a href="#servicios" data-i="n_serv">Servicios</a>
@@ -37,7 +62,7 @@
 <section class="hero" id="inicio">
   <div class="hero-txt">
     <p class="eyebrow"><span data-i="h_eye">Nail studio · Caibarién</span></p>
-    <img class="hero-logo" src="img/logo.png" alt="Jeny's Nails">
+    <svg class="hero-logo" viewBox="0 0 460 200" role="img" aria-label="Jeny's Nails"><use href="#logo-h"/></svg>
     <h1 data-i="h_t">Uñas que cuentan <em>tu historia</em></h1>
     <p class="lead" data-i="h_s">Manicura y pedicura con cuidado, detalle y compromiso. Cada diseño, pensado para ti.</p>
     <div class="cta">
@@ -215,7 +240,7 @@
 </section>
 
 <footer class="foot">
-  <img src="img/logo.png" alt="Jeny's Nails">
+  <svg class="foot-logo" viewBox="0 0 400 400" role="img" aria-label="Jeny's Nails"><use href="#logo-ring"/></svg>
   <p>Resiliencia y compromiso</p>
   <small>© <span id="y"></span> Jeny's Nails · Caibarién, Cuba</small>
 </footer>
