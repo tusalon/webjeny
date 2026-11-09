@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jeny's Nails | Uñas en Caibarién</title>
+<meta name="description" content="Jeny's Nails: manicura y pedicura en Caibarién, Villa Clara. Gel, polygel, soft gel y diseños a mano alzada. Reserva tu cita.">
+<meta property="og:title" content="Jeny's Nails">
+<meta property="og:description" content="Resiliencia y compromiso. Uñas con alma en Caibarién.">
+<meta property="og:image" content="img/13-conchas-doradas.webp">
+<meta name="theme-color" content="#16100f">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="#inicio" class="brand" aria-label="Jeny's Nails"><img src="img/logo.png" alt="Jeny's Nails"></a>
+  <nav class="menu" id="menu">
+    <a href="#galeria" data-i="n_gal">Galería</a>
+    <a href="#servicios" data-i="n_serv">Servicios</a>
+    <a href="#sobre" data-i="n_sobre">Sobre mí</a>
+    <a href="#citas" data-i="n_citas">Citas</a>
+    <a href="#contacto" data-i="n_cont">Contacto</a>
+  </nav>
+  <div class="hd-right">
+    <div class="lang"><button data-lang="es" class="on">ES</button><button data-lang="en">EN</button></div>
+    <button class="burger" id="burger" aria-label="Menú" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PORTADA -->
+<section class="hero" id="inicio">
+  <div class="hero-txt">
+    <p class="eyebrow"><span data-i="h_eye">Nail studio · Caibarién</span></p>
+    <img class="hero-logo" src="img/logo.png" alt="Jeny's Nails">
+    <h1 data-i="h_t">Uñas que cuentan <em>tu historia</em></h1>
+    <p class="lead" data-i="h_s">Manicura y pedicura con cuidado, detalle y compromiso. Cada diseño, pensado para ti.</p>
+    <div class="cta">
+      <a class="btn gold" href="https://tusalon.github.io/rservasroma" target="_blank" rel="noopener" data-i="reservar">Reservar cita</a>
+      <a class="btn ghost" href="#galeria" data-i="ver">Ver mi trabajo</a>
+    </div>
+  </div>
+  <div class="collage" aria-hidden="true">
+    <img class="c1" src="img/13-conchas-doradas.webp" alt="">
+    <img class="c2" src="img/12-french-flor-rosa.webp" alt="">
+    <img class="c3" src="img/16-dorado-perlas.webp" alt="">
+  </div>
+  <a class="scroll" href="#galeria" aria-label="Descubre"><span data-i="desc">Descubre</span></a>
+</section>
+
+<!-- GALERÍA -->
+<section class="sec dark" id="galeria">
+  <div class="head rv">
+    <p class="eyebrow center"><span data-i="g_eye">Galería</span></p>
+    <h2 data-i="g_t">Cada set, una <em>pieza única</em></h2>
+    <p class="muted" data-i="g_s">Toca una foto para verla en grande</p>
+  </div>
+  <div class="strip-wrap rv">
+    <button class="arrow prev" id="gprev" aria-label="Anterior">‹</button>
+    <div class="strip" id="strip"></div>
+    <button class="arrow next" id="gnext" aria-label="Siguiente">›</button>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="sec cream" id="servicios">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow center"><span data-i="s_eye">Mis servicios</span></p>
+      <h2 data-i="s_t">Manicura con <em>sello propio</em></h2>
+      <p class="muted" data-i="s_n">Precios en CUP. Toda manicura incluye manicura combinada y decoración sencilla de cortesía.</p>
+    </div>
+
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-tab="mani" role="tab" data-i="manicura">Manicura</button>
+      <button class="tab" data-tab="pedi" role="tab" data-i="pedicura">Pedicura</button>
+      <button class="tab" data-tab="dis" role="tab" data-i="extras">Diseños</button>
+    </div>
+
+    <div class="panel on" id="mani">
+      <div class="svc">
+        <div class="svc-n"><h3 data-i="gel">Gel semipermanente</h3><small>45 min <span data-i="min">mínimo</span></small></div>
+        <div class="price one"><b>$800</b></div>
+      </div>
+      <div class="svc">
+        <div class="svc-n"><h3>Base Rubber</h3><small>90 min</small></div>
+        <div class="price"><span><i data-i="cortas">Cortas</i><b>$1300</b></span><span><i data-i="medias">Medianas</i><b>$1600</b></span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-n"><h3>Soft Gel</h3><small>90 min</small></div>
+        <div class="price"><span><i data-i="cortas">Cortas</i><b>$1500</b></span><span><i data-i="medias">Medianas</i><b>$1700</b></span><span><i data-i="largas">Largas</i><b>$2000</b></span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-n"><h3>Polygel / Builder Gel</h3><small>90 min · <span data-i="nat">en uñas naturales</span></small></div>
+        <div class="price"><span><i data-i="cortas">Cortas</i><b>$1500</b></span><span><i data-i="medias">Medianas</i><b>$1800</b></span><span><i data-i="largas">Largas</i><b>$2100</b></span></div>
+      </div>
+      <div class="svc">
+        <div class="svc-n"><h3>Polygel / Builder Gel</h3><small>90 min · <span data-i="ext">en extensiones o Sistema Dual</span></small></div>
+        <div class="price"><span><i data-i="cortas">Cortas</i><b>$1800</b></span><span><i data-i="medias">Medianas</i><b>$2000</b></span><span><i data-i="largas">Largas</i><b>$2200</b></span></div>
+      </div>
+      <p class="aviso" data-i="relleno">No realizo relleno sobre el trabajo de otra colega. Se retira por completo ese trabajo, con un costo de $200.</p>
+    </div>
+
+    <div class="panel" id="pedi">
+      <div class="svc"><div class="svc-n"><h3 data-i="p1">Pedicura básica</h3><small>45 min</small></div><div class="price one"><b>$600</b></div></div>
+      <div class="svc"><div class="svc-n"><h3>Soft Gel</h3><small>50 min · <span data-i="gordo">dedo gordo</span></small></div><div class="price one"><b>$600</b></div></div>
+      <div class="svc"><div class="svc-n"><h3>Base Rubber</h3><small>60 min</small></div><div class="price one"><b>$700</b></div></div>
+      <div class="svc"><div class="svc-n"><h3>Builder / Polygel</h3><small>60 min</small></div><div class="price one"><b>$800</b></div></div>
+      <p class="aviso" data-i="p_inc">Todos incluyen esmalte semipermanente y el diseño que prefieras.</p>
+    </div>
+
+    <div class="panel" id="dis">
+      <div class="svc"><div class="svc-n"><h3 data-i="e1">French en todas las uñas</h3></div><div class="price one"><b>+$100</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e2">Cromados: espejo, aurora…</h3></div><div class="price one"><b>+$100</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e3">Degradados o Baby Boomer</h3></div><div class="price one"><b>$100</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e4">Encapsulados</h3></div><div class="price one"><b>+$100</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e5">Piedras, perlas o dijes en todas las uñas</h3></div><div class="price one"><b>+$200</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e6">Relieves 3D</h3></div><div class="price one"><b>+$200</b></div></div>
+      <div class="svc"><div class="svc-n"><h3 data-i="e7">Diseños a mano alzada</h3><small data-i="e7s">Según su complejidad</small></div><div class="price one"><b><span data-i="desde">desde</span> $300</b></div></div>
+      <p class="aviso" data-i="e_n">¿Quieres saber el valor final? Envíame el diseño con antelación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE -->
+<section class="quote-band">
+  <img src="img/15-morado-oscuro-estrellas.webp" alt="" loading="lazy">
+  <blockquote class="rv"><span data-i="q_pre">Mi esencia</span><p data-i="q">Resiliencia y <em>compromiso</em></p></blockquote>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="sec blush" id="sobre">
+  <div class="wrap about">
+    <div class="about-img rv"><img src="img/jeny.webp" alt="Jeny Cabrera, Jeny's Nails" loading="lazy"></div>
+    <div class="about-txt rv">
+      <p class="eyebrow"><span data-i="a_eye">Sobre mí</span></p>
+      <h2 data-i="a_t">Detrás de cada uña, <em>hay una historia</em></h2>
+      <p data-i="a_1">Soy Jeny Cabrera, la manicurista detrás de Jeny's Nails. Mi historia con las uñas comenzó a los 14 años, cuando pintar era simplemente una afición. Con el tiempo, aquella pasión fue creciendo hasta convertirse en mi profesión, a la que hoy me dedico a tiempo completo.</p>
+      <p data-i="a_2">Llevo cuatro años construyendo mi camino en el mundo de la manicura, aprendiendo, perfeccionando mis técnicas y superándome día tras día.</p>
+      <p data-i="a_3">Creo en la belleza, pero también en el cuidado de las uñas naturales, en el trabajo bien hecho y en la importancia de escuchar a cada clienta.</p>
+      <p data-i="a_4">Jeny's Nails es el reflejo de ese camino: un negocio que evoluciona conmigo y que se construye con resiliencia, compromiso y mucho amor por lo que hago.</p>
+      <ul class="facts">
+        <li><b>4</b><span data-i="f1">años de oficio</span></li>
+        <li><b>14</b><span data-i="f2">años cuando empecé</span></li>
+        <li><b>100%</b><span data-i="f3">a tu medida</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CITAS -->
+<section class="sec cream" id="citas">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow center"><span data-i="c_eye">Reservas</span></p>
+      <h2 data-i="c_t">Tu cita, <em>sin complicaciones</em></h2>
+      <p class="muted" data-i="noant">No cobro anticipo.</p>
+    </div>
+    <div class="two rv">
+      <div class="box">
+        <h3 data-i="horarios">Horarios</h3>
+        <div class="day"><span data-i="d1">Martes a viernes</span><div class="chips"><i>9:00 – 11:00</i><i>2:30 – 4:30 pm</i><i>4:40 – 6:40 pm</i></div></div>
+        <div class="day"><span data-i="d2">Sábado</span><div class="chips"><i>8:30 – 10:30 am</i><i>10:40 am – 12:40 pm</i></div></div>
+        <div class="day off"><span data-i="d3">Domingo y lunes</span><em data-i="libre">Días libres</em></div>
+      </div>
+      <div class="box">
+        <h3 data-i="pol">Políticas</h3>
+        <ol class="pol">
+          <li data-i="pol1">Reserva y cancela con más de 24 horas de antelación.</li>
+          <li data-i="pol2">Tolerancia de 10 minutos. Pasado ese tiempo, la cita se cancela automáticamente.</li>
+          <li data-i="pol3">No realizo retoques sobre trabajos de otras colegas: retiro todo el set por $200 CUP.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="center rv"><a class="btn wine" href="https://tusalon.github.io/rservasroma" target="_blank" rel="noopener" data-i="reservar">Reservar cita</a></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="sec dark" id="contacto">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow center"><span data-i="k_eye">Visítame</span></p>
+      <h2 data-i="k_t">Te espero <em>en Caibarién</em></h2>
+    </div>
+    <div class="contact rv">
+      <div class="ccard"><small data-i="dir">Dirección</small><p>Bloque 39, apartamento 2<br>Van Troi 1, Caibarién<br>Villa Clara, Cuba</p></div>
+      <a class="ccard" href="https://wa.me/5358253193" target="_blank" rel="noopener"><small>WhatsApp</small><p>+53 5825 3193</p></a>
+      <a class="ccard" href="https://www.instagram.com/jeny_nails_cuba" target="_blank" rel="noopener"><small>Instagram</small><p>@jeny_nails_cuba</p></a>
+      <a class="ccard" href="https://www.facebook.com/share/1C8oGuhd8s/" target="_blank" rel="noopener"><small>Facebook</small><p>Jeny's Nails</p></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <img src="img/logo.png" alt="Jeny's Nails">
+  <p>Resiliencia y compromiso</p>
+  <small>© <span id="y"></span> Jeny's Nails · Caibarién, Cuba</small>
+</footer>
+
+<div class="float">
+  <a class="pill" href="https://tusalon.github.io/rservasroma" target="_blank" rel="noopener" data-i="citas_btn">Citas</a>
+  <a class="wa" href="https://wa.me/5358253193?text=Hola%20Jeny%2C%20quiero%20reservar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="#fff"><path d="M16.04 3C9.4 3 4 8.38 4 15c0 2.12.56 4.18 1.62 6L4 29l8.2-1.58A12 12 0 0 0 16.04 27C22.66 27 28 21.62 28 15S22.66 3 16.04 3zm0 21.9c-1.8 0-3.56-.5-5.1-1.4l-.36-.22-4.86.94.98-4.7-.24-.38A9.8 9.8 0 0 1 6.2 15c0-5.42 4.42-9.84 9.84-9.84S25.9 9.58 25.9 15s-4.44 9.9-9.86 9.9zm5.4-7.4c-.3-.14-1.74-.86-2.02-.96-.26-.1-.46-.14-.66.14-.2.3-.76.96-.94 1.16-.16.2-.34.22-.64.08-.3-.16-1.24-.46-2.36-1.46a8.9 8.9 0 0 1-1.64-2.04c-.16-.3-.02-.46.12-.6.14-.14.3-.34.44-.5.16-.18.2-.3.3-.5.1-.2.06-.38-.02-.52-.08-.14-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.08-.8.38-.26.3-1.04 1.02-1.04 2.48s1.06 2.88 1.2 3.08c.16.2 2.1 3.2 5.08 4.5.72.3 1.26.5 1.7.64.72.22 1.36.2 1.88.12.58-.08 1.74-.72 1.98-1.4.24-.7.24-1.28.16-1.4-.06-.14-.26-.22-.56-.36z"/></svg>
+  </a>
+</div>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-x" aria-label="Cerrar">×</button>
+  <button class="lb-n lb-p" aria-label="Anterior">‹</button>
+  <img alt="">
+  <button class="lb-n lb-nx" aria-label="Siguiente">›</button>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
