@@ -50,8 +50,13 @@
     <img class="c2" src="img/12-french-flor-rosa.webp" alt="">
     <img class="c3" src="img/16-dorado-perlas.webp" alt="">
   </div>
+  <div class="sparks" id="sparks" aria-hidden="true"></div>
   <a class="scroll" href="#galeria" aria-label="Descubre"><span data-i="desc">Descubre</span></a>
 </section>
+
+<div class="band" aria-hidden="true"><div class="band-t" id="band">
+  <span>Gel semipermanente</span><i>✦</i><span>Polygel</span><i>✦</i><span>Soft Gel</span><i>✦</i><span>Base Rubber</span><i>✦</i><span>Relieves 3D</span><i>✦</i><span>Mano alzada</span><i>✦</i><span>Pedicura</span><i>✦</i>
+</div></div>
 
 <!-- GALERÍA -->
 <section class="sec dark" id="galeria">
@@ -60,10 +65,9 @@
     <h2 data-i="g_t">Cada set, una <em>pieza única</em></h2>
     <p class="muted" data-i="g_s">Toca una foto para verla en grande</p>
   </div>
-  <div class="strip-wrap rv">
-    <button class="arrow prev" id="gprev" aria-label="Anterior">‹</button>
-    <div class="strip" id="strip"></div>
-    <button class="arrow next" id="gnext" aria-label="Siguiente">›</button>
+  <div class="rows">
+    <div class="mq"><div class="mq-t" id="r1"></div></div>
+    <div class="mq rev"><div class="mq-t" id="r2"></div></div>
   </div>
 </section>
 
@@ -129,7 +133,7 @@
 
 <!-- FRASE -->
 <section class="quote-band">
-  <img src="img/15-morado-oscuro-estrellas.webp" alt="" loading="lazy">
+  <img class="par" src="img/15-morado-oscuro-estrellas.webp" alt="" loading="lazy">
   <blockquote class="rv"><span data-i="q_pre">Mi esencia</span><p data-i="q">Resiliencia y <em>compromiso</em></p></blockquote>
 </section>
 
@@ -145,9 +149,9 @@
       <p data-i="a_3">Creo en la belleza, pero también en el cuidado de las uñas naturales, en el trabajo bien hecho y en la importancia de escuchar a cada clienta.</p>
       <p data-i="a_4">Jeny's Nails es el reflejo de ese camino: un negocio que evoluciona conmigo y que se construye con resiliencia, compromiso y mucho amor por lo que hago.</p>
       <ul class="facts">
-        <li><b>4</b><span data-i="f1">años de oficio</span></li>
-        <li><b>14</b><span data-i="f2">años cuando empecé</span></li>
-        <li><b>100%</b><span data-i="f3">a tu medida</span></li>
+        <li><b data-n="4">4</b><span data-i="f1">años de oficio</span></li>
+        <li><b data-n="14">14</b><span data-i="f2">años cuando empecé</span></li>
+        <li><b data-n="100" data-suf="%">100%</b><span data-i="f3">a tu medida</span></li>
       </ul>
     </div>
   </div>
@@ -157,6 +161,19 @@
 <section class="sec cream" id="citas">
   <div class="wrap">
     <div class="head rv">
+      <div class="seal" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9844a"/><stop offset=".45" stop-color="#f0dda9"/><stop offset=".7" stop-color="#c9a86a"/><stop offset="1" stop-color="#8f6d37"/></linearGradient>
+            <path id="sc" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/>
+          </defs>
+          <circle cx="100" cy="100" r="97" fill="url(#gg)"/>
+          <circle cx="100" cy="100" r="90" fill="none" stroke="#16100f" stroke-opacity=".55" stroke-width="1"/>
+          <circle cx="100" cy="100" r="52" fill="none" stroke="#16100f" stroke-opacity=".55" stroke-width="1"/>
+          <g class="ring"><text font-family="Montserrat,sans-serif" font-size="12.5" font-weight="600" letter-spacing="3.2" fill="#16100f"><textPath href="#sc" textLength="446" lengthAdjust="spacing">SIN ANTICIPO ✦ RESERVA CON 24 H ✦</textPath></text></g>
+          <text x="100" y="118" text-anchor="middle" font-family="Playfair Display,serif" font-style="italic" font-size="52" fill="#16100f">J</text>
+        </svg>
+      </div>
       <p class="eyebrow center"><span data-i="c_eye">Reservas</span></p>
       <h2 data-i="c_t">Tu cita, <em>sin complicaciones</em></h2>
       <p class="muted" data-i="noant">No cobro anticipo.</p>

@@ -2,16 +2,20 @@ const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [..
 
 // ---- galería (franja deslizable) + lightbox
 const photos = ['13-conchas-doradas','12-french-flor-rosa','16-dorado-perlas','08-tulipanes-encaje','05-perla-concha-lila','14-verde-concha-flor','04-fresas-3d','09-frutas-3d','06-tortugas-mar','18-rosas-rojas','15-morado-oscuro-estrellas','17-plata-cromado','19-otono-calabaza','10-winnie-pooh','11-brasil','20-momia-fantasma'];
-const strip = $('#strip');
-photos.forEach((p, n) => {
-  const b = document.createElement('button');
-  b.innerHTML = `<img src="img/${p}.webp" alt="Diseño de uñas de Jeny's Nails" loading="lazy">`;
-  b.onclick = () => open(n);
-  strip.appendChild(b);
-});
-const step = () => strip.clientWidth * 0.7;
-$('#gprev').onclick = () => strip.scrollBy({ left: -step(), behavior: 'smooth' });
-$('#gnext').onclick = () => strip.scrollBy({ left: step(), behavior: 'smooth' });
+// dos hileras que corren solas (la segunda en sentido contrario); cada foto va 2 veces para que el bucle no tenga salto
+const fill = (id, order) => {
+  const t = $(id);
+  [...order, ...order].forEach(n => {
+    const b = document.createElement('button');
+    b.innerHTML = `<img src="img/${photos[n]}.webp" alt="Diseño de uñas de Jeny's Nails" loading="lazy">`;
+    b.onclick = () => open(n);
+    t.appendChild(b);
+  });
+};
+const idx = photos.map((_, i) => i);
+fill('#r1', idx.filter(i => i % 2 === 0).concat(idx.filter(i => i % 2 === 1)));
+fill('#r2', idx.slice().reverse());
+const band = $('#band'); band.innerHTML += band.innerHTML;
 
 const lb = $('#lb'), lbImg = $('img', lb);
 let cur = 0;
@@ -44,8 +48,56 @@ const onScroll = () => header.classList.toggle('solid', scrollY > 30);
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
 burger.onclick = () => { const o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o); };
 $$('a', menu).forEach(a => a.onclick = () => { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); });
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-$$('.rv').forEach(el => io.observe(el));
+// entrada escalonada de tarjetas, filas y sellos
+$$('.two>*,.contact>*,.facts li,.pol li,.day,.svc').forEach((el, i) => { el.classList.add('rv'); el.style.setProperty('--d', (i % 4) * .12 + 's'); });
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const count = el => {
+  const to = +el.dataset.n, suf = el.dataset.suf || '', t0 = performance.now();
+  const f = t => { const p = Math.min((t - t0) / 1400, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))) + suf; if (p < 1) requestAnimationFrame(f); };
+  if (!reduce) requestAnimationFrame(f);
+};
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add('in'); io.unobserve(e.target);
+  $$('[data-n]', e.target).forEach(count);
+  if (e.target.matches('[data-n]')) count(e.target);
+}), { threshold: .12 });
+$$('.rv,[data-n]').forEach(el => io.observe(el));
+
+// barra dorada de avance + paralaje de la foto de la frase
+const bar = document.createElement('div'); bar.className = 'progress'; document.body.appendChild(bar);
+const par = $('.quote-band .par'), qb = $('.quote-band');
+const onMove = () => {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+  if (par && !reduce) { const r = qb.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) par.style.transform = `translateY(${(r.top - innerHeight / 2) * -0.12}px)`; }
+};
+addEventListener('scroll', onMove, { passive: true }); onMove();
+
+// chispas doradas en la portada
+const sp = $('#sparks');
+if (sp && !reduce) for (let i = 0; i < 18; i++) {
+  const s = document.createElement('i'), z = 4 + Math.random() * 9;
+  s.style.cssText = `left:${Math.random() * 100}%;width:${z}px;height:${z}px;animation-duration:${9 + Math.random() * 12}s;animation-delay:${-Math.random() * 18}s`;
+  sp.appendChild(s);
+}
+
+// profundidad: tarjetas que se inclinan hacia el cursor + portada con paralaje
+if (matchMedia('(hover:hover)').matches && !reduce) {
+  $$('.box,.ccard,.about-img').forEach(el => {
+    el.classList.add('tilt');
+    el.addEventListener('pointermove', e => {
+      const r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      el.style.setProperty('--ry', x * 9 + 'deg'); el.style.setProperty('--rx', -y * 9 + 'deg'); el.style.setProperty('--ty', '-6px');
+    });
+    el.addEventListener('pointerleave', () => ['--rx', '--ry', '--ty'].forEach(v => el.style.removeProperty(v)));
+  });
+  const hero = $('.hero'), cs = $$('.collage img');
+  hero.addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    cs.forEach((c, i) => c.style.translate = `${x * (i + 1) * -22}px ${y * (i + 1) * -16}px`);
+  });
+}
 
 // ---- idioma ES / EN
 const EN = {
